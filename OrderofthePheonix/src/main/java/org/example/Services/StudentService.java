@@ -57,7 +57,7 @@ public class StudentService {
             System.out.println("An error occurred while updating an student in the database " + e.getMessage());
         }
     }
-    public void getHostel(String student_id, Connection conn) {
+    public void getStudent(String student_id, Connection conn) {
         // Get a Student from the database
         String sql = "SELECT * FROM students WHERE student_id = ?";
 
