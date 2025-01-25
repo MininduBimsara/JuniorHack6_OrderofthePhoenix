@@ -17,7 +17,8 @@ public class OpertaionFactory {
             HostelMenuFactory hostelMenuFactory = new HostelMenuFactory();
             hostelMenuFactory.selectMenuItem(number);
         } else if (number == 2) {
-
+            StudentMenuFactory studentMenuFactory = new StudentMenuFactory();
+            studentMenuFactory.selectMenuItem(number);
         } else if (number == 3) {
 
         } else if(number == 0) {

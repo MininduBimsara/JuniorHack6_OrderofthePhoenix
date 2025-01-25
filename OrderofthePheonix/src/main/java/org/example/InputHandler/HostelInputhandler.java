@@ -58,4 +58,9 @@ public class HostelInputhandler implements InputHandler{
         hostelService.getHostel(hostelId,conn);
     }
 
+    @Override
+    public void remove() {
+
+    }
+
 }
