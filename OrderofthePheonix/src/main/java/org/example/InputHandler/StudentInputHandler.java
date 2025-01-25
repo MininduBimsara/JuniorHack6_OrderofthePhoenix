@@ -1,5 +1,6 @@
 package org.example.InputHandler;
 
+import org.example.Services.MainService;
 import org.example.Services.StudentService;
 import org.example.Utils.DatabaseIntegration;
 
@@ -26,7 +27,11 @@ public class StudentInputHandler implements InputHandler{
         System.out.println("[3] Enter the Department\n\n");
         String studentDepartment = input.nextLine();
         System.out.println("[0] Main Menu\n\n");
-        String Menu = input.nextLine();
+        int Menu = input.nextInt();
+        if (Menu == 0) {
+            MainService mainService = new MainService();
+            mainService.mainMenu();
+        }
 
         StudentService studentService = new StudentService();
         studentService.addStudent(studentId,studentName,parseInt(studentAge),studentDepartment,conn);
@@ -43,10 +48,14 @@ public class StudentInputHandler implements InputHandler{
         String studentName = input.nextLine();
         System.out.println("[3] Update the age\n\n");
         String studentAge = input.nextLine();
-        System.out.println("[3] Update the Department\n\n");
+        System.out.println("[4] Update the Department\n\n");
         String studentDepartment = input.nextLine();
         System.out.println("[0] Main Menu\n\n");
-        String Menu = input.nextLine();
+        int Menu = input.nextInt();
+        if (Menu == 0) {
+            MainService mainService = new MainService();
+            mainService.mainMenu();
+        }
 
         StudentService studentService = new StudentService();
         studentService.updateStudent(studentId,studentName,parseInt(studentAge),studentDepartment,conn);

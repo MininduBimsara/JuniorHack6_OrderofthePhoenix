@@ -1,6 +1,7 @@
 package org.example.InputHandler;
 
 import org.example.Services.HostelService;
+import org.example.Services.MainService;
 import org.example.Services.RoomService;
 import org.example.Services.StudentService;
 import org.example.Utils.DatabaseIntegration;
@@ -28,7 +29,11 @@ public class RoomInputHandler implements InputHandler{
         System.out.println("[4] Enter the Capacity of the Room\n\n");
         String roomsCapacity= input.nextLine();
         System.out.println("[0] Back to Previous\n\n");
-        String Menu = input.nextLine();
+        int Menu = input.nextInt();
+        if (Menu == 0) {
+            MainService mainService = new MainService();
+            mainService.mainMenu();
+        }
 
         RoomService roomService = new RoomService();
         roomService.addRoom(roomId,hostelId,parseInt(roomNumber),parseInt(roomsCapacity),conn);
@@ -50,7 +55,11 @@ public class RoomInputHandler implements InputHandler{
         System.out.println("[4] Enter the Available Capacity of the Room\n\n");
         String roomsAvailableCapacity= input.nextLine();
         System.out.println("[0] Back to Previous\n\n");
-        String Menu = input.nextLine();
+        int Menu = input.nextInt();
+        if (Menu == 0) {
+            MainService mainService = new MainService();
+            mainService.mainMenu();
+        }
 
         RoomService roomService = new RoomService();
         roomService.updateRoom(roomId,hostelId,parseInt(roomNumber),parseInt(roomsCapacity),parseInt(roomsAvailableCapacity),conn);

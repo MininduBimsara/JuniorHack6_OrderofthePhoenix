@@ -33,7 +33,6 @@ public class StudentAllocationInputHandler implements InputHandler{
         System.out.println("Choose a room to allocate(roomID): \n\n");
         String roomId = input.nextLine();
         StudentAllocationService studentAllocationService = new StudentAllocationService();
-        studentAllocationService.allocateRoom(studentId,conn);
 
     }
 

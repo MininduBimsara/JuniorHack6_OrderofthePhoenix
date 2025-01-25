@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 public class StudentAllocationService {
 
-    public void allocateRoom(String student_id, String room_id,String date, Connection conn) {
+    public void allocateRoom(String allocation_id, String student_id, String room_id,String date, Connection conn) {
         // Add a Student to the database
         String sql = "SELECT * FROM rooms WHERE room_id = ?";
         try {
