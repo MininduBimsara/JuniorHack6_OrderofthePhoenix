@@ -7,5 +7,5 @@ public interface InputHandler {
 
     void view();
 
-    void delete();
+    void remove();
 }
