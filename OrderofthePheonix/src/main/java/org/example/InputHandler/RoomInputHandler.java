@@ -67,7 +67,7 @@ public class RoomInputHandler implements InputHandler{
     }
 
     @Override
-    public void delete() {
+    public void remove() {
         Scanner input = new Scanner(System.in);
         System.out.println("Please Give me the Room number...\n\n");
         String roomNum = input.nextLine();
@@ -76,8 +76,5 @@ public class RoomInputHandler implements InputHandler{
         roomService.deleteRoom(roomNum,conn);
     }
 
-    @Override
-    public void delete() {
 
-    }
 }

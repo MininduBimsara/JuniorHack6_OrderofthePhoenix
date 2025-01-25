@@ -1,6 +1,5 @@
 package org.example.InputHandler;
 
-import org.example.Services.HostelService;
 import org.example.Services.StudentService;
 import org.example.Utils.DatabaseIntegration;
 
@@ -60,7 +59,7 @@ public class StudentInputHandler implements InputHandler{
         System.out.println("Please Give me the ID of the Student...\n\n");
         String studentId = input.nextLine();
         StudentService studentService = new StudentService();
-        studentService.getHostel(studentId,conn);
+        studentService.getStudent(studentId,conn);
     }
 
     @Override
