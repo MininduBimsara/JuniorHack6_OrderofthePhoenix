@@ -6,7 +6,7 @@ import java.sql.SQLException;
 public class HostelService {
 
 
-        public void addHostel(String hostal_id, String hostal_name, int number_of_rooms, Connection conn) {
+        public void addHostel(String hostal_id, String hostal_name, Integer number_of_rooms, Connection conn) {
             // Add an hostel to the database
             String sql = "INSERT INTO hostals (hostal_id, hostal_name, number_of_rooms) VALUES (?, ?, ?)";
 
