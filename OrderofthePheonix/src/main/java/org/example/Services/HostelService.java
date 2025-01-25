@@ -55,7 +55,7 @@ public class HostelService {
         }
         public void getHostel(String id, Connection conn) {
             // Get an Hostel from the database
-            String sql = "SELECT * FROM hostals WHERE id = ?";
+            String sql = "SELECT * FROM hostals WHERE hostal_id = ?";
 
             try {
                 PreparedStatement preparedStatement = conn.prepareStatement(sql);
