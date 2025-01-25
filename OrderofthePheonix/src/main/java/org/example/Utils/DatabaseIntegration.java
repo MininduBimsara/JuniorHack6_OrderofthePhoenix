@@ -9,7 +9,7 @@ public class DatabaseIntegration {
 
     // Connect to the database
 
-    private static final String URL = "jdbc:mysql://localhost:3306/";
+    private static final String URL = "jdbc:mysql://localhost:3306/hostalmanagementsystem";
     private static final String User = "root";
     private static final String Password = "";
 
