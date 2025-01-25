@@ -2,7 +2,7 @@ package org.example.menus;
 import java.util.Scanner;
 
 public class StudentAllocationManagementMenu {
-    public int studentMenu() {
+    public int studentAllocationMenu() {
 
         Scanner input = new Scanner(System.in);
         System.out.println("Student Allocation Management...\n\n");
