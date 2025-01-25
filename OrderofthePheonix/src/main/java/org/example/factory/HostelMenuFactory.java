@@ -2,6 +2,8 @@ package org.example.factory;
 
 import org.example.InputHandler.HostelInputhandler;
 import org.example.Services.MainService;
+import org.example.menus.RoomsManagementMenu;
+import org.example.menus.StudentManagementMenu;
 
 public class HostelMenuFactory {
 
@@ -15,8 +17,10 @@ public class HostelMenuFactory {
         } else if (number == 3) {
             hostelInputhandler.view();
         } else if (number == 4) {
+            RoomsManagementMenu roomsManagementMenu = new RoomsManagementMenu();
+            int result = roomsManagementMenu.roomsMenu();
             RoomsMenuFactory roomsMenuFactory = new RoomsMenuFactory();
-            roomsMenuFactory.selectMenuItem(number);
+            roomsMenuFactory.selectMenuItem(result);
         } else if (number == 0) {
             MainService mainService = new MainService();
             mainService.mainMenu();

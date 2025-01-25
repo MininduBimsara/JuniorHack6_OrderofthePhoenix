@@ -12,13 +12,13 @@ public class RoomsMenuFactory {
 
         if (number == 1) {
             roomsInputhandler.add();
-        } else if (number == '2') {
+        } else if (number == 2) {
             roomsInputhandler.update();
-        } else if (number == '3') {
+        } else if (number == 3) {
             roomsInputhandler.view();
-        } else if (number == '4') {
-            roomsInputhandler.delete();
-        } else if (number == '0') {
+        } else if (number == 4) {
+            roomsInputhandler.remove();
+        } else if (number == 0) {
             OpertaionFactory opertaionFactory = new OpertaionFactory();
             opertaionFactory.selectItemFromMainMenu(1);
         } else {
