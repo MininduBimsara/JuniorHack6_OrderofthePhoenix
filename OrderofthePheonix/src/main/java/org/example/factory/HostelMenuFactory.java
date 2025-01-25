@@ -6,13 +6,13 @@ import org.example.menus.HostelManagementMenu;
 
 public class HostelMenuFactory {
 
-    public InputHandler selectMenuItem (){
+    public void selectMenuItem (){
         HostelManagementMenu hostelManagementMenu = new HostelManagementMenu();
         int number = hostelManagementMenu.hostelMenu();
         HostelInputhandler hostelInputhandler = new HostelInputhandler();
 
         if (number == 1) {
-            return Inputhandler.add();
+            hostelInputhandler.add();
         } else if (number == '2') {
             hostelInputhandler.inputUpdateHostal();
         } else if (number == '3') {
