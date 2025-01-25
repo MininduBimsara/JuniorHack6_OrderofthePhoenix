@@ -53,13 +53,13 @@ public class HostelService {
                 System.out.println("An error occurred while updating an Hostel in the database " + e.getMessage());
             }
         }
-        public void getHostel(int id, Connection conn) {
+        public void getHostel(String id, Connection conn) {
             // Get an Hostel from the database
             String sql = "SELECT * FROM hostals WHERE id = ?";
 
             try {
                 PreparedStatement preparedStatement = conn.prepareStatement(sql);
-                preparedStatement.setInt(1, id);
+                preparedStatement.setString(1, id);
                 preparedStatement.executeQuery();
                 System.out.println("Hostel retrieved successfully");
 
