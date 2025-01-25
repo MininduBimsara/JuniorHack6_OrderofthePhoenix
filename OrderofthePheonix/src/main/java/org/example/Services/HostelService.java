@@ -6,16 +6,15 @@ import java.sql.SQLException;
 public class HostelService {
 
 
-
-        public void addHostel(String name, int place, int date, Connection conn) {
+        public void addHostel(String hostal_id, String hostal_name, int number_of_rooms, Connection conn) {
             // Add an hostel to the database
-            String sql = "INSERT INTO hostel (name, salary, age) VALUES (?, ?, ?)";
+            String sql = "INSERT INTO hostals (hostal_id, hostal_name, number_of_rooms) VALUES (?, ?, ?)";
 
             try {
                 PreparedStatement preparedStatement = conn.prepareStatement(sql);
-                preparedStatement.setString(1, name);
-                preparedStatement.setInt(2, place);
-                preparedStatement.setInt(3, date);
+                preparedStatement.setString(1, hostal_id);
+                preparedStatement.setString(2, hostal_name);
+                preparedStatement.setInt(3, number_of_rooms);
                 preparedStatement.executeUpdate();
                 System.out.println("Hostel added successfully");
             } catch (SQLException e) {
@@ -24,13 +23,13 @@ public class HostelService {
 
         }
 
-        public void deleteHostel(int id, Connection conn) {
+        public void deleteHostel(int hostal_id, Connection conn) {
             // Delete an Hostel from the database
-            String sql = "DELETE FROM hostel WHERE id = ?";
+            String sql = "DELETE FROM hostals WHERE id = ?";
 
             try {
                 PreparedStatement preparedStatement = conn.prepareStatement(sql);
-                preparedStatement.setInt(1, id);
+                preparedStatement.setInt(1, hostal_id);
                 preparedStatement.executeUpdate();
                 System.out.println("Hostel deleted successfully");
             } catch (SQLException e) {
@@ -39,16 +38,15 @@ public class HostelService {
 
         }
 
-        public void updateHostel(int id, String name, int place, int date, Connection conn) {
+        public void updateHostel(String hostal_id, String hostal_name, int number_of_rooms, Connection conn) {
             // Update an Hostel in the database
-            String sql = "UPDATE Hostel SET name = ?, salary = ?, age = ? WHERE id = ?";
+            String sql = "UPDATE hostals SET hostal_id = ?, hostal_name = ?, number_of_rooms = ? WHERE id = ?";
 
             try {
                 PreparedStatement preparedStatement = conn.prepareStatement(sql);
-                preparedStatement.setString(1, name);
-                preparedStatement.setInt(2, place);
-                preparedStatement.setInt(3, date);
-                preparedStatement.setInt(4, id);
+                preparedStatement.setString(1, hostal_id);
+                preparedStatement.setString(2, hostal_name);
+                preparedStatement.setInt(3, number_of_rooms);
                 preparedStatement.executeUpdate();
                 System.out.println("Hostel updated successfully");
             } catch (SQLException e) {
@@ -57,7 +55,7 @@ public class HostelService {
         }
         public void getHostel(int id, Connection conn) {
             // Get an Hostel from the database
-            String sql = "SELECT * FROM Hostel WHERE id = ?";
+            String sql = "SELECT * FROM hostals WHERE id = ?";
 
             try {
                 PreparedStatement preparedStatement = conn.prepareStatement(sql);
