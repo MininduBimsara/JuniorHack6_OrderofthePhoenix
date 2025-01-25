@@ -6,4 +6,6 @@ public interface InputHandler {
     void update();
 
     void view();
+
+    void delete();
 }
