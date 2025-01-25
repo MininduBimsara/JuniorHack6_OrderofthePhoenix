@@ -1,17 +1,18 @@
 package org.example.factory;
 
 import org.example.InputHandler.HostelInputhandler;
+import org.example.InputHandler.InputHandler;
 import org.example.menus.HostelManagementMenu;
 
 public class HostelMenuFactory {
 
-    public HostelInputhandler selectMenuItem (){
+    public InputHandler selectMenuItem (){
         HostelManagementMenu hostelManagementMenu = new HostelManagementMenu();
         int number = hostelManagementMenu.hostelMenu();
         HostelInputhandler hostelInputhandler = new HostelInputhandler();
 
         if (number == 1) {
-            hostelInputhandler.inputAddHostal();
+            return Inputhandler.add();
         } else if (number == '2') {
             hostelInputhandler.inputUpdateHostal();
         } else if (number == '3') {
