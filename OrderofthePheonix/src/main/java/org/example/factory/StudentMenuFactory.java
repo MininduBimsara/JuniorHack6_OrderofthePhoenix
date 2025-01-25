@@ -1,22 +1,21 @@
 package org.example.factory;
 
-import org.example.InputHandler.HostelInputhandler;
+import org.example.InputHandler.StudentInputHandler;
 import org.example.Services.MainService;
 
-public class HostelMenuFactory {
+public class StudentMenuFactory {
 
     public void selectMenuItem(int number) {
-        HostelInputhandler hostelInputhandler = new HostelInputhandler();
+        StudentInputHandler studentInputHandler = new StudentInputHandler();
 
         if (number == 1) {
-            hostelInputhandler.add();
+            studentInputHandler.add();
         } else if (number == 2) {
-            hostelInputhandler.update();
+            studentInputHandler.remove();
         } else if (number == 3) {
-            hostelInputhandler.view();
+            studentInputHandler.update();
         } else if (number == 4) {
-            RoomsMenuFactory roomsMenuFactory = new RoomsMenuFactory();
-            roomsMenuFactory.selectMenuItem(number);
+            studentInputHandler.view();
         } else if (number == 0) {
             MainService mainService = new MainService();
             mainService.mainMenu();

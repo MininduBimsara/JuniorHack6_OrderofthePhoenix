@@ -43,4 +43,9 @@ public class RoomInputHandler implements InputHandler{
     public void view() {
 
     }
+
+    @Override
+    public void delete() {
+
+    }
 }
