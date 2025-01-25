@@ -10,7 +10,6 @@ public class Main {
     public static void main(String[] args) {
 
 
-        // Connect to the database
 
         Connection conn = DatabaseIntegration.getConnection();
 
@@ -22,7 +21,7 @@ public class Main {
         System.out.println("[2] Manage Students\n\n");
         System.out.println("[3] Manage Student Allocations\n\n");
         System.out.println("[0] Exit\n\n");
-        String name = input.nextLine();
+        String number = input.nextLine();
 
 
         // Add an employee to the database
