@@ -6,9 +6,7 @@ import org.example.menus.HostelManagementMenu;
 
 public class HostelMenuFactory {
 
-    public void selectMenuItem (){
-        HostelManagementMenu hostelManagementMenu = new HostelManagementMenu();
-        int number = hostelManagementMenu.hostelMenu();
+    public void selectMenuItem(int number) {
         HostelInputhandler hostelInputhandler = new HostelInputhandler();
 
         if (number == 1) {
