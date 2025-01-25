@@ -1,5 +1,8 @@
 package org.example.InputHandler;
 
+import org.example.Services.HostelService;
+import org.example.Services.RoomService;
+import org.example.Services.StudentAllocationService;
 import org.example.Services.StudentService;
 import org.example.Utils.DatabaseIntegration;
 
@@ -16,29 +19,37 @@ public class StudentAllocationInputHandler implements InputHandler{
     public void add() {
         Scanner input = new Scanner(System.in);
         System.out.println("Student Management...\n\n");
-        System.out.println("[1] Add the student id (ex: abc001)\n\n");
+        System.out.println("student id (ex: abc001)\n\n");
         String studentId = input.nextLine();
-        System.out.println("[2] Add the Student name\n\n");
-        String studentName = input.nextLine();
-        System.out.println("[3] Enter the age\n\n");
-        String studentAge = input.nextLine();
-        System.out.println("[3] Enter the Department\n\n");
-        String studentDepartment = input.nextLine();
-        System.out.println("[0] Main Menu\n\n");
-        String Menu = input.nextLine();
 
         StudentService studentService = new StudentService();
         studentService.getStudent(studentId,conn);
+
+        System.out.println("Hostel ID (ex: abc001)\n\n");
+        String hostalId = input.nextLine();
+        RoomService roomService = new RoomService();
+        roomService.viewRoom(hostalId,conn);
+
+        System.out.println("Choose a room to allocate(roomID): \n\n");
+        String roomId = input.nextLine();
+        StudentAllocationService studentAllocationService = new StudentAllocationService();
 
     }
 
     @Override
     public void update() {
 
+
     }
 
     @Override
     public void view() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("student id (ex: abc001)\n\n");
+        String studentId = input.nextLine();
+
+        StudentAllocationService studentAllocationService = new StudentAllocationService();
+        studentAllocationService.getHostel(studentId,conn);
 
     }
 

@@ -1,6 +1,7 @@
 package org.example.InputHandler;
 
 import org.example.Services.HostelService;
+import org.example.Services.MainService;
 import org.example.Utils.DatabaseIntegration;
 
 import java.sql.Connection;
@@ -23,7 +24,11 @@ public class HostelInputhandler implements InputHandler{
         System.out.println("[3] Enter the number of Rooms\n\n");
         String hostelRooms = input.nextLine();
         System.out.println("[0] Back to Previous\n\n");
-        String Menu = input.nextLine();
+        int Menu = input.nextInt();
+        if (Menu == 0) {
+            MainService mainService = new MainService();
+            mainService.mainMenu();
+        }
 
         HostelService hostelService = new HostelService();
         hostelService.addHostel(hostelId,hostelName,parseInt(hostelRooms),conn);
@@ -42,7 +47,11 @@ public class HostelInputhandler implements InputHandler{
         System.out.println("[3] Enter the number of Rooms\n\n");
         String hostelRooms = input.nextLine();
         System.out.println("[0] Back to Previous\n\n");
-        String Menu = input.nextLine();
+        int Menu = input.nextInt();
+        if (Menu == 0) {
+            MainService mainService = new MainService();
+            mainService.mainMenu();
+        }
 
         HostelService hostelService = new HostelService();
         hostelService.addHostel(hostelId,hostelName,parseInt(hostelRooms),conn);

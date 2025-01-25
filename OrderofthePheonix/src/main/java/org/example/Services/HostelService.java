@@ -65,14 +65,13 @@ public class HostelService {
 
                 ResultSet resultSet = preparedStatement.executeQuery();
                 if (resultSet.next()) {
-                    int HostelId = resultSet.getInt("id");
-                    String HostelName = resultSet.getString("name");
-                    int HostelSalary = resultSet.getInt("place");
-                    int HostelAge = resultSet.getInt("date");
+                    String HostelId = resultSet.getString("hostal_id");
+                    String HostelName = resultSet.getString("hostal_name");
+                    int HostelRooms= resultSet.getInt("number_of_rooms");
                     System.out.println("Hostel ID: " + HostelId);
                     System.out.println("Hostel Name: " + HostelName);
-                    System.out.println("Hostel Salary: " + HostelSalary);
-                    System.out.println("Hostel Age: " + HostelAge);
+                    System.out.println("Hostel Salary: " + HostelRooms);
+
                 } else {
                     System.out.println("Hostel not found");
                 }
