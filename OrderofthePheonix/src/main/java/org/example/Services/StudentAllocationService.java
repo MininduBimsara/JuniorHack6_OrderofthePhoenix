@@ -9,20 +9,47 @@ public class StudentAllocationService {
 
     public void allocateRoom(String allocation_id, String student_id, String room_id,String date, Connection conn) {
         // Add a Student to the database
-        String sql = "INSERT INTO allocations (allocation_id, student_id, room_id, date) VALUES (?, ?, ?, ?)";
-
+        String sql = "SELECT * FROM rooms WHERE room_id = ?";
         try {
             PreparedStatement preparedStatement = conn.prepareStatement(sql);
-            preparedStatement.setString(1, allocation_id);
-            preparedStatement.setString(2, student_id);
-            preparedStatement.setString(3, room_id);
-            preparedStatement.setString(4, date);
-            preparedStatement.executeUpdate();
+            preparedStatement.setString(1, room_id);
+            preparedStatement.executeQuery();
 
-            System.out.println("Student Allocation added successfully");
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                int roomNumber = resultSet.getInt("room_number");
+                int capacity = resultSet.getInt("capacity");
+                int availableCapacity = resultSet.getInt("available_capacity");
+                if(availableCapacity > 0) {
+                    String sql2 = "INSERT INTO allocations (allocation_id, student_id, room_id, date) VALUES (?, ?, ?, ?)";
+
+                    try {
+                        PreparedStatement preparedStatement2 = conn.prepareStatement(sql2);
+                        preparedStatement2.setString(1, allocation_id);
+                        preparedStatement2.setString(2, student_id);
+                        preparedStatement2.setString(3, room_id);
+                        preparedStatement2.setString(4, date);
+                        preparedStatement2.executeUpdate();
+
+                        System.out.println("Student Allocation added successfully");
+
+                    } catch (SQLException e) {
+                        System.out.println("An error occurred while adding a Student Allocation to the database " + e.getMessage());
+                    }
+
+                } else {
+                    System.out.println("Room is full");
+                }
+
+
+            } else {
+                System.out.println("Room not found");
+            }
+
         } catch (SQLException e) {
-            System.out.println("An error occurred while adding a Student Allocation to the database " + e.getMessage());
+            System.out.println("An error occurred while retrieving an Room from the database " + e.getMessage());
         }
+
 
     }
 
