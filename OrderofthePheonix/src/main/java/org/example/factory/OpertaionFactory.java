@@ -20,7 +20,8 @@ public class OpertaionFactory {
             StudentMenuFactory studentMenuFactory = new StudentMenuFactory();
             studentMenuFactory.selectMenuItem(number);
         } else if (number == 3) {
-
+            StudentAllocationMenuFactory studentAllocationMenuFactory = new StudentAllocationMenuFactory();
+            studentAllocationMenuFactory.selectMenuItem(number);
         } else if(number == 0) {
             return;
         } else {

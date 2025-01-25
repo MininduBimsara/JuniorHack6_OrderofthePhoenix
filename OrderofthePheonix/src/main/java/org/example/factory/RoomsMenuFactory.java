@@ -17,7 +17,7 @@ public class RoomsMenuFactory {
         } else if (number == '3') {
             roomsInputhandler.view();
         } else if (number == '4') {
-            roomsInputhandler.delete();
+            roomsInputhandler.remove();
         } else if (number == '0') {
             OpertaionFactory opertaionFactory = new OpertaionFactory();
             opertaionFactory.selectItemFromMainMenu(1);
