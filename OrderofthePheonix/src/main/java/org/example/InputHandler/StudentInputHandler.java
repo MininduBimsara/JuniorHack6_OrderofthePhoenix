@@ -64,7 +64,7 @@ public class StudentInputHandler implements InputHandler{
     }
 
     @Override
-    public void delete() {
+    public void remove() {
         Scanner input = new Scanner(System.in);
         System.out.println("Please Give me the ID of the Student...\n\n");
         String studentId = input.nextLine();
